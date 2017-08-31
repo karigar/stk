@@ -1,14 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/qgis2web.css">
+    <link rel="stylesheet" href="css/MarkerCluster.css" />
+    <link rel="stylesheet" href="css/MarkerCluster.Default.css" />
+    
+	<!--Leaflet -->
+    <link rel="stylesheet" href="lib/leaflet/leaflet.css"/>
+	<link rel="stylesheet" href="css/leaflet.css" />
+	<link rel="stylesheet" href="css/leaflet.draw.css" />
+    <link rel="stylesheet" href="css/leaflet.measurecontrol.css" />
+	<script src="lib/leaflet/leaflet.js"> </script>
+    <script src="data/stk_basin_aoi.geojson"> </script>
+	<style type="text/css">
+	#map {height : 400px;}
+		</style>
+<head>
 <body>
-<h1>Sohan Tochi Kurram River Basin</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</script>
-$.getJSON("https://github.com/karigar/stk/blob/master/stk_basin_aoi.geojson", function(data) {
-var jsonHeat = L.geoJson(data, { 
-style: style,
-onEachFeature: onEachFeature
-}).addTo(map);
-</script>
+    <h1>Sohan Tochi Kurram River Basin</h1>
+    <div id="map"></div>
+    <script>
+	var map = L.map('map').setView([70.78, 32.84], 13);
+	var stkLayer = L.geoJson(stk).addTo(map);
+	</script>
+
 </body>
 </html>
